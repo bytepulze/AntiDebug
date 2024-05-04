@@ -5,6 +5,18 @@ import json
 import requests
 import psutil
 
+class CONTEXT(ctypes.Structure):
+    _fields_ = [
+        ("ContextFlags", ctypes.c_ulong),
+        ("Dr0", ctypes.c_ulong),
+        ("Dr1", ctypes.c_ulong),
+        ("Dr2", ctypes.c_ulong),
+        ("Dr3", ctypes.c_ulong),
+        ("Dr6", ctypes.c_ulong),
+        ("Dr7", ctypes.c_ulong),
+    ]
+
+
 # Import necessary Windows API functions
 kernel32 = ctypes.windll.kernel32
 user32 = ctypes.windll.user32
